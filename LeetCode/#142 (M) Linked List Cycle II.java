@@ -21,6 +21,8 @@ Can you solve it without using extra space?
  */
 
 /*
+https://discuss.leetcode.com/topic/19367/java-o-1-space-solution-with-detailed-explanation
+
 Define two pointers slow and fast. Both start at head node, fast is twice as fast as slow. 
 If it reaches the end it means there is no cycle, 
 otherwise eventually it will eventually catch up to slow pointer somewhere in the cycle.

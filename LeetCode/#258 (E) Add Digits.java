@@ -16,3 +16,9 @@ public class Solution {
         return remain == 0 ? 9 : remain;
     }
 }
+
+public class Solution_faster {
+    public int addDigits(int num) {
+        return 1 + (num-1)%9;
+    }
+}

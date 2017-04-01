@@ -12,6 +12,7 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 public class Solution {
     public List<String> letterCombinations_better(String digits) {
         LinkedList<String> ans = new LinkedList<String>();
+        if(digits.length() == 0) return ans;
         String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         ans.add("");
         for(int i =0; i<digits.length();i++){

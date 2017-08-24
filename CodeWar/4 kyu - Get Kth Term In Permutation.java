@@ -15,7 +15,7 @@ For s = "abc", k = 3, the result should be "bac".
 
 The permutations in order are:
 "abc", "acb", "bac", "bca", "cab", "cba"
-So, The 2nd term is "bac".
+So, The 3rd term is "bac".
 
 Input/Output
 
@@ -68,12 +68,11 @@ class KthPermutation {
         // the sortStr should DELETE the previous index's character in the resultStr(have been used),
         // or sortStr.indexOf(ch) will not get the correct index in the future.
         // So we can figure out this:
-        // Our purpose term is k, which can be added by x!*y(x begin from N-1),
+        // Our purpose term is k-1, which can be added by x!*y(x begin from N-1),
         // such as "abc", k == 3, purpose == 2 == 2!*1("bac"), 
-        // or "abcd", purpose == 11 == ↓
+        // or "abcd", k == 12, purpose == 11 == ↓
         // 3!*1("abcd"'s 'b') + 2!*2("acd"'s 'd') + 1!*1("ac"'s 'c') + 0!*0("a"'s 'a').
         // Obviously, when we get the purpose, remain characters can be appended to resultStr directly.
-        // And sortStr like "a" or "bc", no index change in resultStr, so their purpose is 0.
         
         int len = strng.length();
         // 26! == 403291461126605635584000000, is greater than long value, so use BigInteger instead

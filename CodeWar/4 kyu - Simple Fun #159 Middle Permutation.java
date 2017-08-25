@@ -124,8 +124,9 @@ class MiddlePermutation {
         if(fMap.get(num) != null) {
             return fMap.get(num);
         }
-        long result = num;
-        return doFactorial(num-1).multiply(BigInteger.valueOf(result));
+        BigInteger result = doFactorial(num-1).multiply(BigInteger.valueOf(num));
+        fMap.put(num, result);
+        return result;
     }
 
 }
